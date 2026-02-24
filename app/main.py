@@ -1,5 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from app.core.config import settings
+
+from sqlalchemy.orm import Session
+from sqlalchemy import text, inspect
+from app.db.database import get_db
 
 app = FastAPI(title=settings.APP_NAME)
 
