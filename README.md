@@ -20,3 +20,6 @@ source venv/Scripts/activate
 python -m pip freeze > requirements.txt
 # run project 
 uvicorn app.main:app --reload --port 8001
+# use alembic to migrations 
+alembic revision --autogenerate -m "add users table"
+alembic upgrade head
